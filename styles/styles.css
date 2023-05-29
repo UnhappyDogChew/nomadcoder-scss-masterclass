@@ -56,15 +56,32 @@ lesson #2.7
 각 셀의 크기로 fr(fraction) 값을 넣어주면 비율에 맞게 크기를 채워준다.
 
 grid-template 속성은 그리드 템플릿을 설정하는 모든 속성을 한번에 설정할 수 있는 숏컷이다.
+* 주의: repeat()함수를 사용할 수 없다.
+*/
+
+/*
+lesson #2.8
+
+justify-items, align-items 로 각 셀 안의 자식들의 위치를 변경해줄 수 있다. 기본으로는 둘다 stretch 이다.
+정렬축이 row 라고 생각하고 flexbox 와 같은 방식으로 작동한다.
+
+place-items 는 두 가지를 합친 숏컷이다.
+
+* 여담 *
+justify 는 정렬축에 대해, align 은 교차축에 대한 것이고,
+content 는 여러 아이템에 대해, items 는 각각의 개별 아이템에 대해 정렬하는 것을 의미한다고 생각하면 될것같다.
+justify-content 는 정렬축의 여러 아이템의 위치를 결정하는 것이고,
+align-items 는 각각의 아이템에 대해 교차축 위치를 결정하는 것이다.
+align-content 는 교차축의 여러 아이템을 정렬하는 것이다. 그래서 flexbox가 여러 줄일 때 각 줄의 교차축 위치를 
+결정할 때 쓰인다.
+그렇다면 justify-items 는 정렬축에 대해 각각의 아이템의 위치를 결정하는 것이 된다.
 */
 .grid {
   display: grid;
   height: calc(100vh - 16px);
   gap: 8px;
-  grid-template:
-    "header header header header" 1fr
-    "content content content sidebar" 2fr
-    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  place-items: center center;
 }
 
 /*
@@ -87,20 +104,21 @@ span 을 지정할 때 시작점을 지정하려면 1 / span 3 와 같이 지정
 */
 .header {
   background: #2ecc71;
-  grid-area: header;
 }
 
 .content {
   background: #2e7dcc;
-  grid-area: content;
 }
 
 .sidebar {
   background: #7d2ecc;
-  grid-area: sidebar;
 }
 
 .footer {
   background: #cc7d2e;
-  grid-area: footer;
+}
+
+div {
+  color: white;
+  padding: 8px;
 }
