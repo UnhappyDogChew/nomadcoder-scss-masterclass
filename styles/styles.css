@@ -4,11 +4,12 @@
   height: 200px;
 
   /* 
+  lesson #1.0
+
   inline은 box가 아니라서 width, height를 지정할 수 없다. 
   inline요소는 내부 컨텐츠에 따라 유동적으로 크기가 변한다.
 
   inline-block은 한 줄에 얼라인되는 inline의 속성과 box형태로 크기를 지정하는 block의 속성을 모두 가지고 있다.
-
   */
   display: inline-block;
   color: white;
