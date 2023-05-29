@@ -49,11 +49,22 @@ lesson #2.6
 
 grid-template 을 설정할 때 라인에 이름을 붙여주고 그 이름을 자식의 영역을 지정할 때 사용할 수 있다.
 */
+
+/*
+lesson #2.7
+
+각 셀의 크기로 fr(fraction) 값을 넣어주면 비율에 맞게 크기를 채워준다.
+
+grid-template 속성은 그리드 템플릿을 설정하는 모든 속성을 한번에 설정할 수 있는 숏컷이다.
+*/
 .grid {
   display: grid;
-  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [forth-line] 100px [last-line];
-  grid-template-rows: repeat(4, 100px [sexy-line]);
-  gap: 10px;
+  height: calc(100vh - 16px);
+  gap: 8px;
+  grid-template:
+    "header header header header" 1fr
+    "content content content sidebar" 2fr
+    "footer footer footer footer" 1fr / 1fr 1fr 1fr 1fr;
 }
 
 /*
@@ -76,21 +87,20 @@ span 을 지정할 때 시작점을 지정하려면 1 / span 3 와 같이 지정
 */
 .header {
   background: #2ecc71;
-  grid-column: first-line / last-line;
+  grid-area: header;
 }
 
 .content {
   background: #2e7dcc;
-  grid-column: span 3;
-  grid-row: 2 / sexy-line 3;
+  grid-area: content;
 }
 
 .sidebar {
   background: #7d2ecc;
-  grid-row: span 2;
+  grid-area: sidebar;
 }
 
 .footer {
   background: #cc7d2e;
-  grid-column: span 4;
+  grid-area: footer;
 }
