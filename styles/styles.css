@@ -8,6 +8,18 @@
   flex container는 다음과 같이 display 속성을 flex로 설정하면 된다.
   */
   display: flex;
+
+  /*
+  lesson #1.2
+
+  flexbox 의 기본 flex-direction 은 row 이다. 
+
+  justify-content 는 정렬축(main axis)을 기준으로 자식의 위치를 변경한다.
+  align-items 는 교차축(cross axis)을 기준으로 자식의 위치를 변경한다.
+  */
+  justify-content: space-evenly;
+  align-items: flex-end;
+  height: 50vh;
 }
 
 .box {
