@@ -51,11 +51,18 @@
 
   inline-block은 한 줄에 얼라인되는 inline의 속성과 box형태로 크기를 지정하는 block의 속성을 모두 가지고 있다.
   */
-  width: 200px;
   height: 200px;
   background: peru;
   color: white;
   font-size: 40px;
+
+  /*
+  lesson #1.7
+
+  flex-basis 는 정렬축에서 자식의 기본 크기를 지정한다. flex-direction 이 row 이면 width 를, 
+  column 이면 height 를 지정한다.
+  */
+  flex-basis: 200px;
 }
 
 .child:nth-child(2) {
