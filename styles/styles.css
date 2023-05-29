@@ -38,7 +38,7 @@
 
   align-content 속성을 설정하면 정렬축이 여러개일 때 정렬축의 위치를 설정할 수 있다.
   */
-  flex-wrap: wrap-reverse;
+  flex-wrap: nowrap;
   align-content: space-between;
 }
 
@@ -73,4 +73,20 @@
   align-self: center;
   order: 1;
   */
+
+  /*
+  lesson #1.6
+
+  부모의 wrap 방식이 nowrap 일때 자식은 공간이 부족하면 크기가 줄어든다.
+  flex-shrink 속성을 설정하면 크기가 줄어드는 비율을 설정할 수 있다.
+  기본이 1이고, 2면 2배, 3이면 3배 더 줄어든다.
+
+  flex-grow 속성은 남는 공간이 있을 때 그 공간을 얼마만큼의 비율로 차지할 것인지를 정한다.
+  기본은 0으로 되어 있으므로 남는 공간이 생겨도 크기가 변하지 않는다. 
+  만약 flex-grow 가 1이상인 자식이 여러개 있어도 공간을 추가로 차지하지 않는다. 대신 각각의 값 비율에 따라 남는
+  공간을 나눠가진다.
+  */
+  background-color: black;
+  flex-shrink: 3;
+  flex-grow: 1;
 }
