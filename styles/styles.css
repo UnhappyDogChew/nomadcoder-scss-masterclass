@@ -18,7 +18,7 @@
   align-items 는 교차축(cross axis)을 기준으로 자식의 위치를 변경한다.
   */
   justify-content: space-evenly;
-  align-items: flex-end;
+  align-items: flex-start;
   height: 100vh;
 
   /*
@@ -26,7 +26,20 @@
 
   flex-direction 이 column 이 되면 세로축이 정렬축이 되고 가로축이 교차축이 된다.
   */
-  flex-direction: column;
+
+  /* flex-direction: column; */
+
+  /*
+  lesson #1.5
+
+  flexbox 는 기본적으로 모든 아이템을 한 라인에 몰아넣는다. 
+  flex-wrap 속성을 nowrap 에서 wrap 으로 바꿔주면 자식들의 크기가 유지되고, 넘치는 자식들을 다음 라인으로 넘긴다.
+  wrap-reverse 속성으로 정렬 순서를 바꿀 수 있다.
+
+  align-content 속성을 설정하면 정렬축이 여러개일 때 정렬축의 위치를 설정할 수 있다.
+  */
+  flex-wrap: wrap-reverse;
+  align-content: space-between;
 }
 
 .child {
@@ -55,6 +68,9 @@
   order 속성에 주는 숫자가 몇 번째 인덱스인지를 알려주는것은 아니다. 기본적으로 모든 자식들은 order 속성이 0으로 
   설정되어 있다.
   */
+
+  /*
   align-self: center;
   order: 1;
+  */
 }
