@@ -63,3 +63,15 @@ button {
 
   border: 0;
 }
+
+h1 {
+  font-size: 40px;
+
+  @include responsive("iphone") {
+    font-weight: 500;
+  }
+
+  @include responsive("none") {
+    color: blue;
+  }
+}

@@ -16,3 +16,22 @@ mixin 은 마치 함수같은 것으로, 파라미터를 받거나 @if @else 앳
     color: red;
   }
 }
+
+/* 
+lesson #3.4
+
+@content 앳룰으로 믹스인 안에 컨텐츠를 어디에 추가할지 명시할 수 있다.
+이걸 이용해서 컨텐츠의 '래퍼'를 만들 수 있다.
+*/
+
+@mixin responsive($device) {
+  @if $device == "iphone" {
+    @media screen and (300px <= width < 800px) {
+      @content;
+    }
+  } @else {
+    @media screen {
+      @content;
+    }
+  }
+}
