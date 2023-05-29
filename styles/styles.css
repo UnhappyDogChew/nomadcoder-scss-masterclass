@@ -65,7 +65,7 @@ lesson #2.8
 justify-items, align-items 로 각 셀 안의 자식들의 위치를 변경해줄 수 있다. 기본으로는 둘다 stretch 이다.
 정렬축이 row 라고 생각하고 flexbox 와 같은 방식으로 작동한다.
 
-place-items 는 두 가지를 합친 숏컷이다.
+place-items 는 두 가지를 합친 숏컷이다. align -> justify 순이다.
 
 * 여담 *
 justify 는 정렬축에 대해, align 은 교차축에 대한 것이고,
@@ -76,12 +76,21 @@ align-content 는 교차축의 여러 아이템을 정렬하는 것이다. 그�
 결정할 때 쓰인다.
 그렇다면 justify-items 는 정렬축에 대해 각각의 아이템의 위치를 결정하는 것이 된다.
 */
+
+/*
+lesson #2.9
+
+justify-content 와 align-content 로 각각의 아이템이 아닌 전체 column 과 row 의 위치를 조정할 수 있다.
+
+place-content 는 두 개를 동시에 설정하는 솟컷이다. 마찬가지로 align -> justify 순이다.
+*/
 .grid {
+  background: black;
   display: grid;
   height: calc(100vh - 16px);
   gap: 8px;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
-  place-items: center center;
+  grid-template: repeat(4, 100px) / repeat(4, 100px);
+  place-content: space-around end;
 }
 
 /*
