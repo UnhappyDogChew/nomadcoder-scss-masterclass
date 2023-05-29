@@ -1,0 +1,18 @@
+/*
+lesson #3.2
+
+@mixin 앳룰을 정의해서 믹스인을 만든다.
+
+mixin 은 마치 함수같은 것으로, 파라미터를 받거나 @if @else 앳룰으로 조건부 스타일 적용 등이 가능하다.
+*/
+@mixin link($word) {
+  text-decoration: none;
+  display: block;
+  font-size: 30px;
+
+  @if $word == odd {
+    color: blue;
+  } @else {
+    color: red;
+  }
+}

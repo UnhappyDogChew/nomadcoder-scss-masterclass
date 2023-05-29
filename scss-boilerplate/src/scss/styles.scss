@@ -8,6 +8,22 @@ scss 에서는 nesting 을 통해 좀더 보기 쉬운 표현이 가능하다.
 & 는 바로 바깥쪽 셀렉터를 의미한다.
 */
 @import "variables";
+@import "mixins";
+
+/* 
+lesson #3.2
+
+@include 를 이용해서 믹스인을 임포트한다.
+
+mixin 은 마치 함수처럼 파라미터를 넣어줄 수 있다.
+*/
+a:nth-child(odd) {
+  @include link(odd);
+}
+
+a:nth-child(even) {
+  @include link(even);
+}
 
 h2 {
   color: $bg;
