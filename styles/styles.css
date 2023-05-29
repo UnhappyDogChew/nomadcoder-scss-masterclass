@@ -43,10 +43,16 @@ area 이름 대신 - 을 넣으면 빈 영역이 된다.
 속성을 설정할 때 반복되는 값을 계속 써 줘야 하는 경우에는 repeate() 함수를 이용하면된다.
 예) repeat(4, 200px) -> 200px 200px 200px 200px
 */
+
+/*
+lesson #2.6
+
+grid-template 을 설정할 때 라인에 이름을 붙여주고 그 이름을 자식의 영역을 지정할 때 사용할 수 있다.
+*/
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
+  grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [forth-line] 100px [last-line];
+  grid-template-rows: repeat(4, 100px [sexy-line]);
   gap: 10px;
 }
 
@@ -70,13 +76,13 @@ span 을 지정할 때 시작점을 지정하려면 1 / span 3 와 같이 지정
 */
 .header {
   background: #2ecc71;
-  grid-column: span 4;
+  grid-column: first-line / last-line;
 }
 
 .content {
   background: #2e7dcc;
   grid-column: span 3;
-  grid-row: span 2;
+  grid-row: 2 / sexy-line 3;
 }
 
 .sidebar {
